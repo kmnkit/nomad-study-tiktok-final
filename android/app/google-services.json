@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050037307292",
+    "project_id": "nomad-study-final",
+    "storage_bucket": "nomad-study-final.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050037307292:android:b40348546bb350c1a22a59",
+        "android_client_info": {
+          "package_name": "com.example.study_final"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4pf44ciOm4qFL4oJDb_jkLL5N8paQLYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
