@@ -9,12 +9,12 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: _onPressed,
-            icon: const Icon(Icons.login),
-          )
-        ],
+        title: const Text(
+          "🔥 MOOD 🔥",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: const SafeArea(
         child: Column(
