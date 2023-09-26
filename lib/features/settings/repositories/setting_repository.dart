@@ -18,6 +18,7 @@ class SettingsRepository {
         isPrivate: false,
       ),
     )!;
+
     return setting;
   }
 }

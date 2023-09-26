@@ -23,11 +23,12 @@ class SettingsViewModel extends Notifier<SettingModel> {
     state = updatedSetting;
   }
 
-  void setPrivacy(bool value) async =>
+  Future<void> setPrivacy(bool value) async =>
       await _updateSetting((current) => current.copyWith(isPrivate: value));
 
-  void setDarkMode(bool value) async =>
-      await _updateSetting((current) => current.copyWith(isDarkMode: value));
+  Future<void> setDarkMode(bool value) async {
+    await _updateSetting((current) => current.copyWith(isDarkMode: value));
+  }
 
   bool isDarkMode() => _repository.getSetting().isDarkMode;
 
