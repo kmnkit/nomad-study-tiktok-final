@@ -13,14 +13,16 @@ final _key = GlobalKey<NavigatorState>();
 final routerProvider = Provider<GoRouter>(
   (ref) => GoRouter(
     navigatorKey: _key,
-    initialLocation: RoutePath.signUp,
+    initialLocation: RoutePath.moods,
     redirect: (context, state) {
       final isLoggedIn = ref.read(authRepo).isLoggedIn;
+      print('로그인 여부: $isLoggedIn');
       if (!isLoggedIn) {
         if (state.matchedLocation == RoutePath.signIn ||
             state.matchedLocation == RoutePath.signUp) {
           return state.matchedLocation;
         }
+        return RoutePath.signIn;
       }
       return state.matchedLocation;
     },

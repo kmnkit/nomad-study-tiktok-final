@@ -54,6 +54,8 @@ dependencies:
   freezed_annotation: ^2.4.1
   font_awesome_flutter: ^10.5.0
   firebase_messaging: ^14.6.8
+  flutter_slidable: ^3.0.0
+  uuid: ^4.1.0
 
 dev_dependencies:
   flutter_test:

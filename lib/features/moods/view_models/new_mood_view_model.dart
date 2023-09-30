@@ -7,6 +7,7 @@ import 'package:study_final/features/moods/models/mood.dart';
 import 'package:study_final/features/moods/repositories/mood_repository.dart';
 
 import 'package:study_final/utils.dart';
+import 'package:uuid/uuid.dart';
 
 class NewMoodViewModel extends AsyncNotifier<void> {
   late final MoodRepository _repository;
@@ -25,8 +26,9 @@ class NewMoodViewModel extends AsyncNotifier<void> {
     final form = ref.read(postNewMoodForm);
 
     await AsyncValue.guard(() async {
+      var uuid = const Uuid().v4();
       final mood = MoodModel(
-        id: "",
+        id: uuid,
         text: form['text'],
         likes: 0,
         replies: 0,
@@ -34,7 +36,7 @@ class NewMoodViewModel extends AsyncNotifier<void> {
         emojiIndex: form['emojiIndex'],
         created: DateTime.now().millisecondsSinceEpoch,
       );
-      await _repository.postNewMood(mood);
+      await _repository.postNewMood(mood.toJson());
     });
     if (!context.mounted) return;
     if (state.hasError) {
@@ -46,6 +48,7 @@ class NewMoodViewModel extends AsyncNotifier<void> {
           content: Text("새 Mood가 등록되었습니다."),
         ),
       );
+      FocusManager.instance.primaryFocus?.unfocus();
     }
   }
 }

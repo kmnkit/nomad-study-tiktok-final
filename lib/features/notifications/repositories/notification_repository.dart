@@ -7,7 +7,7 @@ class NotificationRepository {
   final FirebaseMessaging _messaging = FirebaseMessaging.instance;
 
   Future<void> updateToken(String userUid, String token) async =>
-      await _db.collection("users").doc(userUid).update({"token": token});
+      await _db.collection("users").doc(userUid).set({"token": token});
 
   Future<void> updateUserToken(String userUid) async {
     final token = await _messaging.getToken();
